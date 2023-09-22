@@ -1,0 +1,48 @@
+* {
+    font-family: sans-serif;
+}
+body {
+    background: rgb(241, 243, 244);
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.photo img {
+    display: block;
+    max-height: 250px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    border-top: 1px solid lightgray;
+    margin-top: 1rem;
+}
+p {
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+.edit {
+    margin-top: .5rem;
+}
+
+textarea {
+    height: 3rem;
+    width: 300px;
+    max-width: 90%;
+}
+
+.displayNone {
+    display: none;
+}
+
+.displayBlock {
+    display: block;
+}
