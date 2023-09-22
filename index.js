@@ -28,9 +28,9 @@ function populateBeerList() {
                   <img src=${beer.image_url} alt="beer image"/>
               </div>
               <p>Tagline: ${beer.tagline}</p>
-              <h3>Description</h3>
+              <h3>Details</h3>
               <div class="descriptioncontainer">
-                  <p class="descriptiontext">Description: ${beer.description}</p>
+                  <p class="descriptiontext">${beer.description}</p>
               </div>
               <form class="edit">
                   <textarea placeholder="Edit details section here..."></textarea>
