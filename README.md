@@ -14,10 +14,13 @@ CRUD Operations: Experience the implementation of CRUD (Create, Read, Update, De
 To use the Beer Review App, you'll need to set up and run a JSON server to simulate a backend API for managing beer data. Follow these additional steps:
 
 Install JSON Server globally: 
+'''
 npm install -g json-server
-
+'''
 Then start the JSON server to watch the included db.json file:
+'''
 json-server --watch db.json
+'''
 
 
 
