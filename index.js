@@ -105,29 +105,34 @@ function handleSelect() {
 
 function handleEdit(beerLi, descriptionText, beerId) {
   const form = beerLi.querySelector('.edit');
-  const textarea = form.querySelector('textarea');
-
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const newDescription = textarea.value;
-    const patchUrl = `http://localhost:3000/beers/${beerId}`;
-    fetch(patchUrl, {
-      method: 'PATCH',
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        "description": newDescription
-      })
-    })
-    .then(res => res.json())
-    .then(updatedBeer => {
-      descriptionText.textContent = `Description: ${updatedBeer.description}`;
-    })
-    .catch(error => {
-      console.error("Error updating beer description:", error);
-    });
-    textarea.value = '';
+    handleSubmit(e, form, descriptionText, beerId);
   });
+}
+
+function handleSubmit(e, form, descriptionText, beerId) {
+  e.preventDefault();
+  const textarea = form.querySelector('textarea');
+
+  const newDescription = textarea.value;
+  const patchUrl = `http://localhost:3000/beers/${beerId}`;
+  fetch(patchUrl, {
+    method: 'PATCH',
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      "description": newDescription
+    })
+  })
+  .then(res => res.json())
+  .then(updatedBeer => {
+    descriptionText.textContent = `Description: ${updatedBeer.description}`;
+  })
+  .catch(error => {
+    console.error("Error updating beer description:", error);
+  });
+  textarea.value = '';
 }
